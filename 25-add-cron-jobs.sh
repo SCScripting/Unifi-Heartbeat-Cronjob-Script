@@ -9,11 +9,11 @@ DATA_DIR="/data"
 cp ${DATA_DIR}/cronjobs/* /etc/cron.d/
 # Older UDM's had crond, so lets check if its here if so use that one, otherwise use cron
 if [ -x /etc/init.d/crond ]; then
-    /etc/init.d/crond restart
+  /etc/init.d/crond restart
 elif [ -x /etc/init.d/cron ]; then
-    /etc/init.d/cron restart
+  /etc/init.d/cron restart
 else
-    echo "Neither crond nor cron found."
+  echo "Neither crond nor cron found."
 
 fi
 
